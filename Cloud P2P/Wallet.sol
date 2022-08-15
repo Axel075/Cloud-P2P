@@ -19,20 +19,20 @@ contract Wallet is Owner {
         //Liste de paiement
         mapping(uint => Payment) payments;
     }
-    //Chaque Balance a son addresse 
+    //Chaque Balance a son adresse 
     mapping(address => Balance) Wallets;
 
-    //Recuperer le nombre de token, seul le propriotaire du contrat peux l'executer
+    //Récupérer le nombre de token, seul le propriétaire du contrat peux l'exécuter
     function getBalance() public isOwner view returns(uint){
         return address(this).balance;
     }
     //Retirer tout ses tokens vers un wallet
     function withdrawAllMoney(address payable _to) public{
-        //Recupere tout les token
+        //Récupère tout les token
         uint amount = Wallets[msg.sender].totalBalance;
         // Met a 0 le nombre de token du payeur
         Wallets[msg.sender].totalBalance = 0;
-        //transfer le montant a l'adresse indiqué
+        //Transfert le montant a l'adresse indiquée
         _to.transfer(amount);
     }
     //retirer une certaine somme de token vers un wallet
@@ -41,18 +41,18 @@ contract Wallet is Owner {
         require(_amount <= Wallets[msg.sender].totalBalance, "Not enought funds");
         //Retire sa balance en fonction du nombre de token retirer
         Wallets[msg.sender].totalBalance -= _amount;
-        //transfer le montant a l'adresse indiqué
+        //Transfert le montant a l'adresse indiquée
         _to.transfer(_amount);
     }
-    //transfer d'argent
+    //Transfert d'argent
     receive() external payable{
         //stock en mémoire
         Payment memory thisPayment = Payment(msg.value, block.timestamp);
-        //Recupere le montant envoyé 
+        //Récupère le montant envoyé
         Wallets[msg.sender].totalBalance += msg.value;
-        //Recupere l'index de paiement
+        //Récupère l'index de paiement
         Wallets[msg.sender].payments[Wallets[msg.sender].numPayments] = thisPayment;
-        //incrementer le nombre de paiement
+        //Incrémenter le nombre de paiements
         Wallets[msg.sender].numPayments++;
     }
 }
