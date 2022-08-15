@@ -4,7 +4,7 @@ contract Owner {
     address owner;
 
     constructor(){
-        //recuperer l'addresse de la personne qui deploye le smart contract
+        //récupérer l'adresse de la personne qui a déployé le smart contract
         owner = msg.sender;
     }
     //Changer le propriétaire du smart contract
