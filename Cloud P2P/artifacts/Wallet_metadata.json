@@ -1,0 +1,100 @@
+{
+	"compiler": {
+		"version": "0.8.6+commit.11564f7e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_to",
+						"type": "address"
+					}
+				],
+				"name": "withdrawAllMoney",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawMoney",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Wallet.sol": "Wallet"
+		},
+		"evmVersion": "berlin",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Owner.sol": {
+			"keccak256": "0x5f4ce9cf8df8be969b43567db41fd5de5bd7d4261834ff2fedcf5a94f551a50c",
+			"urls": [
+				"bzz-raw://b5b46d02b6ff9fdd4a495de46d10f80ea12f2ce44ad34c5b3104865e8db408e5",
+				"dweb:/ipfs/QmXCkz2xvdfVLxUh1L8GhfoJ4v8yTvqmHV67ahhJe6YjMq"
+			]
+		},
+		"Wallet.sol": {
+			"keccak256": "0x88cde8576513fc2fecc475c995cdfb80942160cbeacbb9034923efd692a79454",
+			"urls": [
+				"bzz-raw://079b84a01f9436713fbf9fe23ae6e4fa14e5e3615415330a7b703627d75d9a0e",
+				"dweb:/ipfs/QmYqxKq1zgjR1pcFNC6hPtAMrVZG5broDb2saRY3e3xvDs"
+			]
+		}
+	},
+	"version": 1
+}
